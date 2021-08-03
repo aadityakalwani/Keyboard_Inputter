@@ -25,24 +25,40 @@ import pyautogui
 # >>> pyautogui.keyUp('shift')
 # >>> pyautogui.hotkey('ctrl', 'c')
 
-pyautogui.keyDown("command")
-pyautogui.press("space")
-pyautogui.keyUp("command")
-pyautogui.write("whatsapp")
-pyautogui.press("enter")
-# whatsapp is now opened
+# this is where i'd put my instructions:
 
-pyautogui.keyDown("command")
-pyautogui.press("f")
-pyautogui.keyUp("command")
-pyautogui.write("me")
-pyautogui.press("enter")
-# i have now opened the me chat
-
-pyautogui.moveTo(100, 375)
-pyautogui.click()
-pyautogui.write("Bruhmoment this is the python bot speaking")
-pyautogui.press("enter")
+name = "Aanchal"
+message = "**laughs in bot**"
 
 
+def open_whatsapp():
+    pyautogui.keyDown("command")
+    pyautogui.press("space")
+    pyautogui.keyUp("command")
+    pyautogui.write("whatsapp")
+    pyautogui.press("enter")
+    # whatsapp is now opened
 
+
+def me_chat():
+    pyautogui.keyDown("command")
+    pyautogui.press("f")
+    pyautogui.keyUp("command")
+    pyautogui.write("me")
+    pyautogui.press("enter")
+    # i have now opened the me chat
+
+
+def custom_chat():
+    pyautogui.keyDown("command")
+    pyautogui.press("f")
+    pyautogui.keyUp("command")
+    pyautogui.write(name)
+    pyautogui.press("enter")
+    pyautogui.write(message)
+    pyautogui.press("enter")
+    # message has been sent
+
+
+open_whatsapp()
+custom_chat()
