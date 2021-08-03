@@ -28,5 +28,21 @@ import pyautogui
 pyautogui.keyDown("command")
 pyautogui.press("space")
 pyautogui.keyUp("command")
-pyautogui.write('Hello world!', interval=0.1)
+pyautogui.write("whatsapp")
+pyautogui.press("enter")
+# whatsapp is now opened
+
+pyautogui.keyDown("command")
+pyautogui.press("f")
+pyautogui.keyUp("command")
+pyautogui.write("me")
+pyautogui.press("enter")
+# i have now opened the me chat
+
+pyautogui.moveTo(100, 375)
+pyautogui.click()
+pyautogui.write("Bruhmoment this is the python bot speaking")
+pyautogui.press("enter")
+
+
 
