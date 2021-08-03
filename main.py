@@ -27,5 +27,6 @@ import pyautogui
 
 pyautogui.keyDown("command")
 pyautogui.press("space")
-pyautogui.write('Hello world!', interval=1)
+pyautogui.keyUp("command")
+pyautogui.write('Hello world!', interval=0.1)
 
