@@ -1,4 +1,5 @@
 import pyautogui
+import time
 
 # these are commands i can do, try to learn these as well
 
@@ -27,38 +28,47 @@ import pyautogui
 
 # this is where i'd put my instructions:
 
-name = "Aanchal"
-message = "**laughs in bot**"
+name = input("Enter the name of the person you would like to send a message to: ")
+message = input("Enter what you want the message to say: ")
+amount_of_times = int(input("Enter how many times you want this message to send: "))
+wait_time = float(input("Enter how long you want the gap to be between messages: "))
+time_interval = float(input("Enter the amount of time you would like there to be between each character typed: "))
+message_counter = input("Enter y if you want there to be a message counter, and n for no message counter: ")
 
 
 def open_whatsapp():
     pyautogui.keyDown("command")
     pyautogui.press("space")
     pyautogui.keyUp("command")
-    pyautogui.write("whatsapp")
+    pyautogui.write("whatsapp", interval=0.25)
     pyautogui.press("enter")
     # whatsapp is now opened
 
 
-def me_chat():
+def custom_chat_open():
     pyautogui.keyDown("command")
     pyautogui.press("f")
     pyautogui.keyUp("command")
-    pyautogui.write("me")
+    pyautogui.write(name, interval=0.25)
     pyautogui.press("enter")
-    # i have now opened the me chat
 
 
-def custom_chat():
-    pyautogui.keyDown("command")
-    pyautogui.press("f")
-    pyautogui.keyUp("command")
-    pyautogui.write(name)
-    pyautogui.press("enter")
-    pyautogui.write(message)
+def write_message():
+    if message_counter.lower() == "n":
+        pyautogui.write(message, interval=time_interval)
+    elif message_counter.lower() == "y":
+        pyautogui.write(f"{message} ({i+1}/{amount_of_times})", interval=time_interval)
     pyautogui.press("enter")
     # message has been sent
 
 
 open_whatsapp()
-custom_chat()
+time.sleep(3)
+custom_chat_open()
+time.sleep(3)
+
+i = 0
+while i < amount_of_times:
+    write_message()
+    i += 1
+    time.sleep(wait_time)
