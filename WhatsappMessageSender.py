@@ -72,3 +72,5 @@ while i < amount_of_times:
     write_message()
     i += 1
     time.sleep(wait_time)
+
+# program finished
